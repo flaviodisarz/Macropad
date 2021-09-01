@@ -1,33 +1,15 @@
-/*******************************************************************
- * RYAN UPDATE THIS (MAYBE LATER ITS DEC 24 AND I JUST GOT THE VIDEO DONE)
- * A multi-mode Macro keyboard with Arduino Pro Micro using row column matrix.
- * This is a basic sketch to understand key layout, basic hotkeys macros and some extras like:
- *    -RBG addressble LEDs compatible with Adafruit's neopixel library.  
- *    -i2c for 4x20 LCD to describe each function.  (you might have a different LCD...)
- *    -mouse movement + mouse clicks.
- *Some mouse movement (in pixels) pull their values from analogRead(pin 0) so make sure something is connected.
- *Don't forget to solder all the diode and encoder solder jumpers on the backside!!
- * (c) 2020 Ryan Bates
-
-  Last time I touched this: Dec 13 2020
-  web: www.retrobuiltgames.com
-  youtube: https://www.youtube.com/c/ryanbatesrbg
-  twitter: @retrobuiltgames
-  Buy this PCB at [TINDIE LINK RYAN: WHENEVER YOU GET THAT DONE]
-
-Ryan's Pro Tips:
+/*
 =============== Keyboard Control================================================================================
-Keyboard.write();   Sends a keystroke to a connected computer. 
-                    This is similar to pressing and releasing a key on your keyboard.
-                    Will send a shift command if applicable. Example: Keyboard.write('K') will 
-                    automatically do SHIFT + k. 
-                    Can also accept ASCII code like this:
-                    //Keyboard.write(32); // This is space bar (in decimal)
-                    Helpful list of ASCII + decimal keys http://www.asciitable.com/
+Keyboard.write();   Melhor para precionamento de teclas simples.
+                    Podendo ser feito de duas formas:
+                    1 - Keyboard.write('K') Será informado K - Maiúsculo como se fosse - SHIFT + k.
+                    2 - Keyboard.write(32) Será informado Tecla de Espaço por se tratar de um codigo ASCII
+                    Para melhor encontrar o codigo correto acesse o site: 
+                    http://www.asciitable.com/
                     
 
-Keyboard.press();   Best for holding down a key with multi-key commands; like copy/ paste
-                    This example is [ctrl] + [shift] + [e] 
+Keyboard.press();   Melhor usado para precionar varias teclas, como copiar e colar.
+                    Como exemplo a seguinte função [ctrl] + [shift] + [e] 
                       //Keyboard.press(KEY_LEFT_CTRL);
                       //Keyboard.press(KEY_LEFT_SHIFT);
                       //Keyboard.press('e'); 
@@ -35,14 +17,12 @@ Keyboard.press();   Best for holding down a key with multi-key commands; like co
                 
 
 Keyboard.print();   Sends a keystroke(s)
-                    Keyboard.print("stop using aim bot"); // types this in as a char or int! (not a string)!
-
+                    Keyboard.print("stop using aim bot"); // Digite isso como char ou int! (não é uma string)
+                    
 
 Keyboard.println(); Sends a keystroke followed by a newline (carriage return)
                      Very practical if you want to type a password and login in one button press!
                      
-SOMETIMES, applications are coded to recognize Keyboard.press() and not Keyboard.write() and vice versa.
-You might have to experiment. 
 
 =============== Mouse Control================================================================================
 Mouse.move(x, y, wheel);  Moves the mouse and or scroll wheel up/down left/right.
@@ -60,7 +40,7 @@ Mouse.release(b);       Releases the mouse button.
 
 Mouse.click(b);         A quick press and release.
 
-**********************************************************************************************************/
+*/
 
 // --------------------------------------------------------------
 // Standard Libraries
